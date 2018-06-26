@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   scope '/api' do
-    # resources :
+    resources :colivings, :coworkings, :comments
   end
 end
