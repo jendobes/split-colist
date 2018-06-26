@@ -10,7 +10,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>SourceLab</h1>
+        <h1>co-list</h1>
+        <p> find co-living and co-working spaces around the world </p>
       </div>
     );
   }
