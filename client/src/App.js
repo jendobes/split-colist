@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Navbar} from 'react-bootstrap';
-import logo from './logo.svg';
 import {connect} from 'react-redux'
 import { bindActionCreators } from 'redux'
 // import * as actions from './actions/'
