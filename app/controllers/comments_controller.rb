@@ -14,7 +14,4 @@ class CommentsController < ApplicationController
     render json: @comments
   end
 
-
-
-
 end
