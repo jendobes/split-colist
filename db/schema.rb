@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_26_155730) do
+ActiveRecord::Schema.define(version: 2018_06_26_184215) do
 
   create_table "colivings", force: :cascade do |t|
     t.string "location"
     t.text "about"
     t.string "website"
     t.integer "rating"
+    t.string "name"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -30,6 +31,7 @@ ActiveRecord::Schema.define(version: 2018_06_26_155730) do
     t.string "location"
     t.string "website"
     t.integer "rating"
+    t.string "name"
   end
 
 end
