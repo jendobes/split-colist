@@ -1,0 +1,2 @@
+class Coliving < ApplicationRecord
+end

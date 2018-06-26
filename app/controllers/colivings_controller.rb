@@ -1,0 +1,2 @@
+class ColivingsController < ApplicationController
+end
