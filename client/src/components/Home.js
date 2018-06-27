@@ -2,23 +2,25 @@ import React from 'react';
 import '../App.css';
 
 
-const Home = () => {
-  return (
-    <div className="App">
-      <div className="App-header">
-        <h1>co-list</h1>
-        <p> find nomad approved co-living and co-working spaces around the world </p>
-      </div>
+class Home extends React.component {
+  render() {
+    return (
+      <div className="App">
+        <div className="App-header">
+          <h1>co-list</h1>
+          <p> find nomad approved co-living and co-working spaces around the world </p>
+        </div>
 
-      <div className="Coliving-container">
-        <p className="text-box">live</p>
-      </div>
+        <div className="Coliving-container">
+          <p className="text-box">live</p>
+        </div>
 
-      <div className="Coworking-container">
-        <p className="text-box">work</p>
+        <div className="Coworking-container">
+          <p className="text-box">work</p>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default Home
