@@ -24,14 +24,24 @@
 
 .Coliving-container {
   background-color: #222;
-  background-image:;
+  background-image: url("./images/coliving-inside.jpg");
+  height: 400px;
+  width: 600px;
   color: white;
+  float: left;
+  margin-left: 150px;
+  margin-top: 50px;
 }
 
 .Coworking-container {
   background-color: #222;
-  background-image:;
+  background-image: url("./images/coworking.jpg");
+  height: 400px;
+  width: 600px;
   color: white;
+  float: right;
+  margin-right: 150px;
+  margin-top: 50px;
 }
 
 @keyframes App-logo-spin {
