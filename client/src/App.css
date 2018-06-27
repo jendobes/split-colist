@@ -23,11 +23,15 @@
 }
 
 .Coliving-container {
-  background-color:
+  background-color: #222;
+  background-image:;
+  color: white;
 }
 
 .Coworking-container {
-  background-color: 
+  background-color: #222;
+  background-image:;
+  color: white;
 }
 
 @keyframes App-logo-spin {
