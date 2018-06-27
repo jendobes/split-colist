@@ -15,11 +15,11 @@ class App extends Component {
         </div>
 
         <div className="Coliving-container">
-          <p>live</p>
+          <p className="text-box">live</p>
         </div>
 
         <div className="Coworking-container">
-          <p>work</p>
+          <p className="text-box">work</p>
         </div>
       </div>
     );

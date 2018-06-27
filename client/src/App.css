@@ -27,7 +27,6 @@
   background-image: url("./images/coliving-inside.jpg");
   height: 400px;
   width: 600px;
-  color: white;
   float: left;
   margin-left: 150px;
   margin-top: 50px;
@@ -38,10 +37,21 @@
   background-image: url("./images/coworking.jpg");
   height: 400px;
   width: 600px;
-  color: white;
   float: right;
   margin-right: 150px;
   margin-top: 50px;
+}
+
+.text-box {
+  color: white;
+  padding: 40px;
+  margin-left: 55px;
+  font:;
+  letter-spacing: 30px;
+  font-size: 100px;
+  border-style: solid;
+  width: 400px;
+  background: rgb(230, 228, 228, 0.4);
 }
 
 @keyframes App-logo-spin {
