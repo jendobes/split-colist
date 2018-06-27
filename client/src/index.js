@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 // import rootReducer from './reducers';
 import './index.css';
-import App from './App';
+import Home from './components/Home';
 import registerServiceWorker from './registerServiceWorker';
 
 // const store = createStore(
@@ -14,6 +15,6 @@ import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
   <Provider>
-  <App />
+  <Home />
   </Provider>, document.getElementById('root'));
 registerServiceWorker();
