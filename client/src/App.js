@@ -9,8 +9,18 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>co-list</h1>
-        <p> find co-living and co-working spaces around the world </p>
+        <div className="App-header">
+          <h1>co-list</h1>
+          <p> find nomad approved co-living and co-working spaces around the world </p>
+        </div>
+
+        <div className="Coliving-container">
+          <p>live</p>
+        </div>
+
+        <div className="Coworking-container">
+          <p>work</p>
+        </div>
       </div>
     );
   }
