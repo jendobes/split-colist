@@ -4,13 +4,8 @@ import '../App.css';
 
 class Home extends React.Component {
   render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <h1>co-list</h1>
-          <p> find nomad approved co-living and co-working spaces around the world </p>
-        </div>
-
+    return(
+      <div>
         <div className="Coliving-container">
           <p className="text-box">live</p>
         </div>
