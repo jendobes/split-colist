@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import '../App.css';
+import Profile from '../components/Profile'
 
 class Cospace extends Component {
   render() {
     return(
       <ul>
-      <li>cospace</li>
-      <li>cospace</li>
-      <li>cospace</li>
+      <Profile />
+      <Profile />
+      <Profile />
       </ul>
     )
   }
