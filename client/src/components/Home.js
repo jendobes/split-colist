@@ -8,7 +8,7 @@ class Home extends React.Component {
     return(
       <div>
         <div className="Coliving-container">
-          <p className="text-box"><Link to='/coworking' style={{ textDecoration: 'none', color: 'white'}}>live</Link></p>
+          <p className="text-box"><Link to='/coliving' style={{ textDecoration: 'none', color: 'white'}}>live</Link></p>
         </div>
 
         <div className="Coworking-container">
