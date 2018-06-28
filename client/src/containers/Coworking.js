@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import '../App.css';
 
-class Coworking extends Component {
+class Cospace extends Component {
   render() {
     return(
       <ul>
-      <li>Coworking Space</li>
-      <li>Coworking Space</li>
-      <li>Coworking Space</li>
+      <li>cospace</li>
+      <li>cospace</li>
+      <li>cospace</li>
       </ul>
     )
   }
 }
 
-export default Coworking
+export default Cospace

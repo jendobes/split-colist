@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './index.css';
 import Home from './components/Home';
 import Header from './components/Header';
-import Coworking from './containers/Coworking'
+import Cospace from './containers/Coworking'
 import registerServiceWorker from './registerServiceWorker';
 
 // const store = createStore(
@@ -20,7 +20,8 @@ ReactDOM.render(
   <div>
     <Route path="/" component={Header}/>
     <Route path="/" exact component={Home}/>
-    <Route path="/coworking" exact component={Coworking}/>
+    <Route path="/coworking" exact component={Cospace}/>
+    <Route path="/coliving" exact component={Cospace}/>
   </div>
 </Router>, document.getElementById('root'));
 registerServiceWorker();
