@@ -24,7 +24,7 @@
 
 .Coliving-container {
   background-color: #222;
-  background-image: url("./images/coliving-inside.jpg");
+  background-image: url("../images/coliving-inside.jpg");
   height: 400px;
   width: 600px;
   float: left;
@@ -34,7 +34,7 @@
 
 .Coworking-container {
   background-color: #222;
-  background-image: url("./images/coworking.jpg");
+  background-image: url("../images/coworking.jpg");
   height: 400px;
   width: 600px;
   float: right;
