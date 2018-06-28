@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 // import rootReducer from './reducers';
 import './index.css';
 import Home from './components/Home';
+import Header from './components/Header';
 import registerServiceWorker from './registerServiceWorker';
 
 // const store = createStore(
@@ -16,7 +17,8 @@ import registerServiceWorker from './registerServiceWorker';
 ReactDOM.render(
 <Router>
   <div>
-    <Route path="/" component={Home}/>
+    <Route path="/" component={Header}/>
+    <Route path="/" exact component={Home}/>
   </div>
 </Router>, document.getElementById('root'));
 registerServiceWorker();
