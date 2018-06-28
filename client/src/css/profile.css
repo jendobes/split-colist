@@ -1,0 +1,11 @@
+.container {
+  border-style: solid;
+  margin-left: 50px;
+  float: left;
+}
+
+.text-container {
+  text-align: left;
+  padding: 15px;
+  padding-right: 100px;
+}

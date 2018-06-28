@@ -5,7 +5,7 @@ import Profile from '../components/Profile'
 class Cospace extends Component {
   render() {
     return(
-      <ul>
+      <ul className="cospace-container">
       <Profile />
       <Profile />
       <Profile />
