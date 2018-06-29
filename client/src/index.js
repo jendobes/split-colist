@@ -9,11 +9,11 @@ import './css/index.css';
 import App from './App.js'
 import registerServiceWorker from './registerServiceWorker';
 
-// const store = createStore(
-//   rootReducer, applyMiddleware(thunk)
-// )
+const store = createStore(
+  rootReducer, applyMiddleware(thunk)
+)
+  
 
-const store = createStore(rootReducer)
 
 ReactDOM.render(
   <Provider>
