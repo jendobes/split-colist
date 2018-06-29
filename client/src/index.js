@@ -6,9 +6,7 @@ import thunk from 'redux-thunk';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 // import rootReducer from './reducers';
 import './css/index.css';
-import Home from './components/Home';
-import Header from './components/Header';
-import Cospace from './containers/Cospace'
+import App from './App.js'
 import registerServiceWorker from './registerServiceWorker';
 
 // const store = createStore(
@@ -16,12 +14,8 @@ import registerServiceWorker from './registerServiceWorker';
 // )
 
 ReactDOM.render(
-<Router>
-  <div>
-    <Route path="/" component={Header}/>
-    <Route path="/" exact component={Home}/>
-    <Route path="/coworking" exact component={Cospace}/>
-    <Route path="/coliving" exact component={Cospace}/>
-  </div>
-</Router>, document.getElementById('root'));
+  <Provider>
+  <App />
+  </Provider>
+, document.getElementById('root'));
 registerServiceWorker();

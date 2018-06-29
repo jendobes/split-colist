@@ -1,28 +1,28 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import {Navbar} from 'react-bootstrap';
 import {connect} from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import './css/index.css';
+import Home from './components/Home';
+import Header from './components/Header';
+import Cospace from './containers/Cospace'
 
 // import * as actions from './actions/'
-import '../css/App.css';
+import './css/App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <h1>co-list</h1>
-          <p> find nomad approved co-living and co-working spaces around the world </p>
+      <Router>
+        <div>
+          <Route path="/" component={Header}/>
+          <Route path="/" exact component={Home}/>
+          <Route path="/coworking" exact component={Cospace}/>
+          <Route path="/coliving" exact component={Cospace}/>
         </div>
-
-        <div className="Coliving-container">
-          <p className="text-box">live</p>
-        </div>
-
-        <div className="Coworking-container">
-          <p className="text-box">work</p>
-        </div>
-      </div>
+      </Router>
     );
   }
 }
