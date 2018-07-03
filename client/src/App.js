@@ -7,7 +7,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './css/index.css';
 import Home from './components/Home';
 import Header from './components/Header';
-import Cospace from './containers/Cospace'
+import Coliving from './containers/Coliving'
+import Coworking from './containers/Coworking'
 
 // import * as actions from './actions/'
 import './css/App.css';
@@ -19,8 +20,8 @@ class App extends Component {
         <div>
           <Route path="/" component={Header}/>
           <Route path="/" exact component={Home}/>
-          <Route path="/coworking" exact component={Cospace}/>
-          <Route path="/coliving" exact component={Cospace}/>
+          <Route path="/coworking" exact component={Coworking}/>
+          <Route path="/coliving" exact component={Coliving}/>
         </div>
       </Router>
     );
