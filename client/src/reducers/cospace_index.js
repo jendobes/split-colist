@@ -7,5 +7,5 @@ export default function cospaceReducer(state = {colivings: [], coworkings: []}, 
     return Object.assign({}, state, {coworkings: action.payload});
 
     default: return state
-  };
+  }
 }
