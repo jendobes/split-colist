@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../css/App.css';
 import Profile from '../components/Profile'
 import {connect} from 'react-redux'
+import {getCoworkings} from '../actions/index.js'
 
 
 class Coworking extends Component {
