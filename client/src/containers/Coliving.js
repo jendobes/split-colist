@@ -6,7 +6,6 @@ import {connect} from 'react-redux'
 import { bindActionCreators } from 'redux'
 import {getColivings} from '../actions/index.js'
 import { Route } from 'react-router-dom';
-// import ColivingsPage from '../containers/ColivingsPage.js'
 
 class Coliving extends Component {
 
