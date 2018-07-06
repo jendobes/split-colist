@@ -1,11 +1,11 @@
 import React from 'react';
 import '../css/profile.css'
 
-const Profile = () => {
+const Profile = (props) => {
   return (
     <div className="container">
       <div className="text-container">
-        <p>Name:</p>
+        <p>Name: {props.coliving.name}</p>
         <p>Location:</p>
         <p>About:</p>
         <p>Webiste:</p>
