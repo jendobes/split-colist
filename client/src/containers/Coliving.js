@@ -3,7 +3,6 @@ import '../css/App.css';
 import Profile from '../components/Profile'
 import {connect} from 'react-redux'
 import { bindActionCreators } from 'redux'
-// import * as actions from '../actions/index.js'
 import {getColivings} from '../actions/index.js'
 
 
@@ -23,7 +22,6 @@ class Coliving extends Component {
     return(
       <div>
       {this.loadProfiles()}
-      <Profile />
       </div>
     )
   }
@@ -37,9 +35,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({getColivings: getColivings}, dispatch)
 }
 
-// const mapDispatchToProps = dispatch => {
-//   return {actions: bindActionCreators(actions, dispatch)}
-// }
-
-// export default Coliving = connect(mapStateToProps, mapDispatchToProps)(Coliving)
 export default connect(mapStateToProps, mapDispatchToProps)(Coliving)
