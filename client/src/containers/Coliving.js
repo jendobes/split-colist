@@ -10,18 +10,19 @@ import {getColivings} from '../actions/index.js'
 class Coliving extends Component {
 
   componentDidMount() {
-    // this.props.actions.getColivings()
     this.props.getColivings()
-    this.loadProfiles()
   }
 
   loadProfiles() {
-    debugger
+    return this.props.colivings.map((coliving) => {
+      return <p key={coliving.id}>{coliving.name}</p>
+    })
   }
 
   render() {
     return(
       <div>
+      {this.loadProfiles()}
       <Profile />
       </div>
     )
