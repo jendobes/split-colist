@@ -1,11 +1,25 @@
-import React from 'react';
-// import { connect } from 'react-redux';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-const ColivingShow = ({coliving}) => 
+class ColivingShow extends Component {
 
-    <div>
-    <p>Hello World!</p>
-    </div>
+  render() {
+    return(
+      <div>
+      <p>{this.props.coliving.name}</p>
+      </div>
+    )
+  }
+}
 
+const mapStateToProps = (state, ownProps) => {
+  const coliving = state.cospaces.colivings.find(coliving => coliving.id == ownProps.match.params.colivingId)
 
-export default ColivingShow
+  if (coliving) {
+    return { coliving }
+  } else {
+    return { coliving: {} }
+  }
+}
+
+export default connect(mapStateToProps)(ColivingShow)

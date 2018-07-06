@@ -1,11 +1,25 @@
-import React from 'react';
-// import { connect } from 'react-redux';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-const ColivingShow = ({coliving}) =>
+class CoworkingShow extends Component {
 
-    <div>
-    <p>Hello World!</p>
-    </div>
+  render() {
+    return(
+      <div>
+      <p>{this.props.coworking.name}</p>
+      </div>
+    )
+  }
+}
 
+const mapStateToProps = (state, ownProps) => {
+  const coworking = state.cospaces.coworkings.find(coworking => coworking.id == ownProps.match.params.coworkingId)
 
-export default ColivingShow
+  if (coworking) {
+    return { coworking }
+  } else {
+    return { coworking: {} }
+  }
+}
+
+export default connect(mapStateToProps)(CoworkingShow)
