@@ -7,17 +7,28 @@ import { bindActionCreators } from 'redux'
 
 
 class Coworking extends Component {
+
+  componentDidMount() {
+    this.props.getCoworkings()
+  }
+
+  loadProfiles() {
+    return this.props.coworkings.map((coworking) => {
+      return < Profile key={coworking.id} cospace={coworking} />
+    })
+  }
+
   render() {
     return(
-      <ul className="cospace-container">
-
-      </ul>
+      <div>
+      {this.loadProfiles()}
+      </div>
     )
   }
 }
 
 function mapStateToProps(state) {
-  return {coworkings: state.coworkings}
+  return {coworkings: state.cospaces.coworkings}
 }
 
 function mapDispatchToProps(dispatch) {
