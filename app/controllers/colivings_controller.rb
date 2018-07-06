@@ -2,7 +2,7 @@ class ColivingsController < ApplicationController
 
   def index
     @colivings = Coliving.all
-    render json: @colivings
+    render json: @colivings.to_json(include: :comments)
   end
 
   def show
