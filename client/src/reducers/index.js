@@ -3,7 +3,7 @@ import cospaceReducer from './cospace_index';
 
 
 const rootReducer = combineReducers({
-    cospace: cospaceReducer
+    cospaces: cospaceReducer
 })
 
 export default rootReducer

@@ -9,5 +9,5 @@ class ColivingsController < ApplicationController
     @coliving = Coliving.find(params: id)
     render json: @coliving
   end
-  
+
 end
