@@ -1,3 +1,4 @@
+require 'pry'
 class ColivingsController < ApplicationController
 
   def index
@@ -6,7 +7,7 @@ class ColivingsController < ApplicationController
   end
 
   def show
-    @coliving = Coliving.find(params: id)
+    @coliving = Coliving.find(params[:id])
     render json: @coliving
   end
 

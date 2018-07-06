@@ -14,4 +14,8 @@ class CommentsController < ApplicationController
     render json: @comments
   end
 
+  def new
+    @comment = Comment.new
+  end
+
 end
