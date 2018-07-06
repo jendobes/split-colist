@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import '../css/App.css';
-import Profile from '../components/Profile'
+import ColivingCard from '../components/ColivingCard'
 import {connect} from 'react-redux'
 import { bindActionCreators } from 'redux'
 import {getColivings} from '../actions/index.js'
 
 
 class Coliving extends Component {
-
+debugger
   componentDidMount() {
     this.props.getColivings()
   }
 
   loadProfiles() {
     return this.props.colivings.map((coliving) => {
-      return < Profile key={coliving.id} cospace={coliving} />
+      return < ColivingCard key={coliving.id} cospace={coliving} />
     })
   }
 

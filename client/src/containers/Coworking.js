@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../css/App.css';
-import Profile from '../components/Profile'
+import CoworkingCard from '../components/CoworkingCard'
 import {connect} from 'react-redux'
 import {getCoworkings} from '../actions/index.js'
 import { bindActionCreators } from 'redux'
@@ -14,7 +14,7 @@ class Coworking extends Component {
 
   loadProfiles() {
     return this.props.coworkings.map((coworking) => {
-      return < Profile key={coworking.id} cospace={coworking} />
+      return < CoworkingCard key={coworking.id} cospace={coworking} />
     })
   }
 
