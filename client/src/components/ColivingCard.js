@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
+
 import '../css/profile.css'
 
 const ColivingCard = (props) => {
@@ -18,6 +20,7 @@ const ColivingCard = (props) => {
       </div>
     </div>
   )
+
 }
 
 export default ColivingCard

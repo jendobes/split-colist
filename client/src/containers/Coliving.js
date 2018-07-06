@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import '../css/App.css';
 import ColivingCard from '../components/ColivingCard'
+import ColivingShow from './ColivingShow'
 import {connect} from 'react-redux'
 import { bindActionCreators } from 'redux'
 import {getColivings} from '../actions/index.js'
-
+import { Route } from 'react-router-dom';
+// import ColivingsPage from '../containers/ColivingsPage.js'
 
 class Coliving extends Component {
-debugger
+
+
   componentDidMount() {
     this.props.getColivings()
   }
@@ -21,7 +24,10 @@ debugger
   render() {
     return(
       <div>
-      {this.loadProfiles()}
+        <Route path={`${this.props.match.url}/:colivingId`} component={ColivingShow}/>
+        <Route exact path={this.props.match.url} render={() => (
+          this.loadProfiles()
+        )}/>
       </div>
     )
   }
