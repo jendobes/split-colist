@@ -14,7 +14,7 @@ class Coliving extends Component {
 
   loadProfiles() {
     return this.props.colivings.map((coliving) => {
-      return < Profile key={coliving.id} coliving={coliving} />
+      return < Profile key={coliving.id} cospace={coliving} />
     })
   }
 
