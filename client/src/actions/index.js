@@ -43,10 +43,9 @@ export function getComments(id) {
 
 export function addCospace(data, type) {
   const url = `http://localhost:3001/api${type}`
-  debugger
   return(dispatch) => {
     dispatch({type: 'SENDING'});
-    fetch(`http://localhost:3001/api${type}`, {
+    fetch(url, {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
