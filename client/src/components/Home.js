@@ -9,11 +9,11 @@ class Home extends React.Component {
     return(
       <div>
         <div className="Coliving-container">
-          <p className="text-box"><Link to='/coliving' style={{ textDecoration: 'none', color: 'white'}}>live</Link></p>
+          <p className="text-box"><Link to='/colivings' style={{ textDecoration: 'none', color: 'white'}}>live</Link></p>
         </div>
 
         <div className="Coworking-container">
-          <p className="text-box"><Link to='/coworking' style={{ textDecoration: 'none', color: 'white'}}>work</Link></p>
+          <p className="text-box"><Link to='/coworkings' style={{ textDecoration: 'none', color: 'white'}}>work</Link></p>
         </div>
 
       </div>
@@ -21,4 +21,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home 
+export default Home

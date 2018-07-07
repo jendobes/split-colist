@@ -26,12 +26,12 @@ class Coliving extends Component {
       <div>
         <Switch>
         <Route path={`${this.props.match.url}/new`} render={() => (
-          <AddForm history={this.props.history} />
+          <AddForm type={this.props.match.url} />
         )}/>
         <Route path={`${this.props.match.url}/:colivingId`} component={ColivingShow}/>
         <Route exact path={this.props.match.url} render={() => (
           <div>
-          <h2 className="center"><Link to={'/coliving/new'}>Add a new coliving space</Link></h2>
+          <h2 className="center"><Link to={'/colivings/new'}>Add a new coliving space</Link></h2>
           {this.loadProfiles()}
           </div>
         )}/>

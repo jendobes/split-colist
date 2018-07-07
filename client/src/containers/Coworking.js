@@ -26,12 +26,12 @@ class Coworking extends Component {
       <div>
         <Switch>
         <Route path={`${this.props.match.url}/new`} render={() => (
-          <AddForm history={this.props.history} />
+          <AddForm type={this.props.match.url} />
         )}/>
         <Route path={`${this.props.match.url}/:coworkingId`} component={CoworkingShow}/>
         <Route exact path={this.props.match.url} render={() => (
           <div>
-          <h2 className="center"><Link to={'/coworking/new'}>Add a new coworking space</Link></h2>
+          <h2 className="center"><Link to={'/coworkings/new'}>Add a new coworking space</Link></h2>
           {this.loadProfiles()}
           </div>
         )}/>

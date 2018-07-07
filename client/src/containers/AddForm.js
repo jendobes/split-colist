@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import { Form, FormGroup, Button, Col, FormControl, ControlLabel } from 'react-bootstrap'
 import { connect } from 'react-redux'
-import { addColiving } from '../actions/index'
+import { addCospace } from '../actions/index'
 import { Route } from 'react-router'
 import Coliving from './Coliving'
 
 class AddForm extends Component {
 
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -23,14 +23,14 @@ class AddForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    this.props.addColiving(this.state)
+    this.props.addCospace(this.state, this.props.type)
     this.setState({
       name: '',
       location: '',
       about: '',
       website: ''
     });
-    
+
   }
 
   handleChange(e) {
@@ -94,4 +94,4 @@ class AddForm extends Component {
   }
 }
 
-export default connect(null, { addColiving })(AddForm)
+export default connect(null, { addCospace })(AddForm)

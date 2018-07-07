@@ -41,10 +41,12 @@ export function getComments(id) {
   }
 }
 
-export function addColiving(data) {
+export function addCospace(data, type) {
+  const url = `http://localhost:3001/api${type}`
+  debugger
   return(dispatch) => {
     dispatch({type: 'SENDING'});
-    fetch('http://localhost:3001/api/colivings', {
+    fetch(`http://localhost:3001/api${type}`, {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
