@@ -3,18 +3,44 @@ import { Form, FormGroup, Button, Col, FormControl, ControlLabel } from 'react-b
 
 class AddForm extends Component {
 
+  constructor() {
+    super()
+
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+
+    this.state = {
+      name: '',
+      location: '',
+      about: '',
+      website: ''
+    }
+  }
+
+  handleSubmit(e) {
+    e.preventDefault()
+    debugger
+  }
+
+  handleChange(e) {
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value,
+    })
+  }
+
   render() {
     return (
       <div className="cospace-container">
       <h1 className='center'> Add a new cospace! </h1>
 
-          <Form horizontal>
+          <Form horizontal onSubmit={this.handleSubmit}>
       <FormGroup controlId="formHorizontalName">
         <Col componentClass={ControlLabel} sm={2}>
           Name
         </Col>
         <Col sm={10}>
-          <FormControl type="text" placeholder="Name" />
+          <FormControl type="text" placeholder="Name" name="name" onChange={this.handleChange}/>
         </Col>
       </FormGroup>
 
@@ -23,7 +49,7 @@ class AddForm extends Component {
           Location
         </Col>
         <Col sm={10}>
-          <FormControl type="text" placeholder="Location" />
+          <FormControl type="text" placeholder="Location" name="location" onChange={this.handleChange}/>
         </Col>
       </FormGroup>
 
@@ -32,7 +58,7 @@ class AddForm extends Component {
           About
         </Col>
         <Col sm={10}>
-          <FormControl type="text" placeholder="About" />
+          <FormControl type="text" placeholder="About" name="about" onChange={this.handleChange}/>
         </Col>
       </FormGroup>
 
@@ -41,7 +67,7 @@ class AddForm extends Component {
           Website
         </Col>
         <Col sm={10}>
-          <FormControl type="text" placeholder="Website" />
+          <FormControl type="text" placeholder="Website" name="website" onChange={this.handleChange}/>
         </Col>
       </FormGroup>
 
