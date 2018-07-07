@@ -3,9 +3,10 @@ import '../css/App.css';
 import {connect} from 'react-redux'
 import {getCoworkings} from '../actions/index.js'
 import { bindActionCreators } from 'redux'
-import { Route } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 import CoworkingCard from '../components/CoworkingCard'
 import CoworkingShow from './CoworkingShow'
+import AddForm from './AddForm'
 
 
 class Coworking extends Component {
@@ -23,10 +24,18 @@ class Coworking extends Component {
   render() {
     return(
       <div>
+        <Switch>
+        <Route path={`${this.props.match.url}/new`} render={() => (
+          <AddForm history={this.props.history} />
+        )}/>
         <Route path={`${this.props.match.url}/:coworkingId`} component={CoworkingShow}/>
         <Route exact path={this.props.match.url} render={() => (
-          this.loadProfiles()
+          <div>
+          <h2 className="center"><Link to={'/coworking/new'}>Add a new coworking space</Link></h2>
+          {this.loadProfiles()}
+          </div>
         )}/>
+        </Switch>
       </div>
     )
   }
