@@ -1,5 +1,6 @@
+require 'pry'
 class CommentsController < ApplicationController
-  before_filter :get_parent
+  before_action :get_parent
 
   def get_parent
     if params[:coliving_id]
@@ -14,8 +15,10 @@ class CommentsController < ApplicationController
     render json: @comments
   end
 
-  def new
-    @comment = Comment.new
+  def create
+    @comment = @parent.comments.build(body: params[:value])
+    @comment.save
+    render json: @comment
   end
 
 end

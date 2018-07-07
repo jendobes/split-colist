@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {FormGroup, ControlLabel, FormControl, HelpBlock} from 'react-bootstrap'
+import { addComment } from '../actions/index.js'
 import Comments from '../components/Comments.js'
 import '../css/App.css';
 
@@ -31,6 +32,8 @@ constructor() {
 
  handleSubmit(e) {
    e.preventDefault()
+   this.props.addComment(this.state, this.props.coliving.id)
+   this.setState({ value: ''})
  }
 
 
@@ -58,7 +61,7 @@ constructor() {
         <div className="card-container">
           <h2>Have you stayed at {this.props.coliving.name}?</h2>
 
-          <form>
+          <form onSubmit={this.handleSubmit}>
             <FormGroup
               controlId="formBasicText"
               validationState={this.getValidationState()}
@@ -91,4 +94,4 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-export default connect(mapStateToProps)(ColivingShow)
+export default connect(mapStateToProps, { addComment })(ColivingShow)
