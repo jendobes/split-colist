@@ -25,7 +25,9 @@ class Coliving extends Component {
     return(
       <div>
         <Switch>
-        <Route path={`${this.props.match.url}/new`} component={AddForm}/>
+        <Route path={`${this.props.match.url}/new`} render={() => (
+          <AddForm history={this.props.history} />
+        )}/>
         <Route path={`${this.props.match.url}/:colivingId`} component={ColivingShow}/>
         <Route exact path={this.props.match.url} render={() => (
           <div>

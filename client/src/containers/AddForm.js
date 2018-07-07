@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Form, FormGroup, Button, Col, FormControl, ControlLabel } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import { addColiving } from '../actions/index'
+import { Route } from 'react-router'
+import Coliving from './Coliving'
 
 class AddForm extends Component {
 
@@ -22,6 +24,13 @@ class AddForm extends Component {
   handleSubmit(e) {
     e.preventDefault()
     this.props.addColiving(this.state)
+    this.setState({
+      name: '',
+      location: '',
+      about: '',
+      website: ''
+    });
+    
   }
 
   handleChange(e) {
