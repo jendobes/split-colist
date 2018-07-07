@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 // import { BrowserRouter as Router, Route } from 'react-router-dom';
 import rootReducer from './reducers/index.js';
@@ -10,7 +10,11 @@ import App from './App.js'
 import registerServiceWorker from './registerServiceWorker';
 
 const store = createStore(
-  rootReducer, applyMiddleware(thunk)
+  rootReducer,
+  compose(
+    applyMiddleware(thunk),
+    window.devToolsExtension ? window.devToolsExtension() : f => f
+  )
 )
 
 

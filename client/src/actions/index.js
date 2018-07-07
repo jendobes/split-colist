@@ -28,8 +28,15 @@ export function addComment(data, id) {
         "Content-Type":"application/json"
       }
     }).then(response => response.json())
-    .then(responseJSON => console.log(responseJSON))
+    .then(responseJSON => {dispatch({type: 'COMMENT_SENT'})})
   }
 }
 
-// {dispatch({type: 'COMMENT_SENT'})}
+export function getComments(id) {
+  return(dispatch) => {
+    dispatch({type: 'LOAD_COMMENTS'});
+    fetch(`http://localhost:3001/api/colivings/${id}/comments`)
+    .then(response => response.json() )
+    .then(comments => dispatch({type: 'GET_COMMENTS', payload: comments}))
+  }
+}

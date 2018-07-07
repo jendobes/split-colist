@@ -5,7 +5,8 @@ import ColivingShow from './ColivingShow'
 import {connect} from 'react-redux'
 import { bindActionCreators } from 'redux'
 import {getColivings} from '../actions/index.js'
-import { Route } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
+import AddForm from './AddForm'
 
 class Coliving extends Component {
 
@@ -23,10 +24,16 @@ class Coliving extends Component {
   render() {
     return(
       <div>
+        <Switch>
+        <Route path={`${this.props.match.url}/new`} component={AddForm}/>
         <Route path={`${this.props.match.url}/:colivingId`} component={ColivingShow}/>
         <Route exact path={this.props.match.url} render={() => (
-          this.loadProfiles()
+          <div>
+          <h2 className="center"><Link to={'/coliving/new'}>Add a new coliving space</Link></h2>
+          {this.loadProfiles()}
+          </div>
         )}/>
+        </Switch>
       </div>
     )
   }
