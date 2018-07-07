@@ -7,13 +7,13 @@ export default function cospaceReducer(state = {colivings: [], coworkings: [], l
     case 'GET_COWORKINGS':
     return Object.assign({}, state, {coworkings: action.payload});
 
-    case "SEND_COMMENTS":
+    case "SENDING":
     return Object.assign({}, state, {loading: true})
 
-    case "COMMENT_SENT":
+    case "SENT":
     return Object.assign({}, state, {loading: false})
 
-    case "LOAD_COMMENTS":
+    case "LOADING":
     return Object.assign({}, state, {loading: true})
 
     case "GET_COMMENTS":

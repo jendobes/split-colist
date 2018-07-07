@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Form, FormGroup, Button, Col, FormControl, ControlLabel } from 'react-bootstrap'
+import { connect } from 'react-redux'
+import { addColiving } from '../actions/index'
 
 class AddForm extends Component {
 
@@ -19,7 +21,7 @@ class AddForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    debugger
+    this.props.addColiving(this.state)
   }
 
   handleChange(e) {
@@ -83,5 +85,4 @@ class AddForm extends Component {
   }
 }
 
-
-export default AddForm
+export default connect(null, { addColiving })(AddForm)

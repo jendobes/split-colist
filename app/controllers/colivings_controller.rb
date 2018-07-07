@@ -11,4 +11,15 @@ class ColivingsController < ApplicationController
     render json: @coliving
   end
 
+  def create
+    @coliving = Coliving.create(coliving_params)
+    render json: @coliving
+  end
+
+  private
+
+  def coliving_params
+    params.required(:coliving).permit(:name, :location, :website, :about, :rating)
+  end
+
 end

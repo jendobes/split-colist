@@ -1,6 +1,6 @@
 export function getCoworkings() {
   return(dispatch) => {
-    dispatch({type: 'LOAD_COWORKINGS'});
+    dispatch({type: 'LOADING'});
     fetch('http://localhost:3001/api/coworkings')
     .then(response => response.json())
     .then(responseJSON => { dispatch({type: 'GET_COWORKINGS', payload: responseJSON}) })
@@ -9,7 +9,7 @@ export function getCoworkings() {
 
 export function getColivings() {
   return(dispatch) => {
-    dispatch({type: 'LOAD_COLIVINGS'});
+    dispatch({type: 'LOADING'});
     fetch('http://localhost:3001/api/colivings')
     .then(response => response.json() )
     .then(colivings => dispatch({type: 'GET_COLIVINGS', payload: colivings}))
@@ -19,7 +19,7 @@ export function getColivings() {
 export function addComment(data, id) {
   let url = `http://localhost:3001/api/colivings/${id}/comments`
   return(dispatch) => {
-    dispatch({type: 'SEND_COMMENT'})
+    dispatch({type: 'SENDING'})
     return fetch(url, {
       method: 'POST',
       body: JSON.stringify(data),
@@ -28,15 +28,30 @@ export function addComment(data, id) {
         "Content-Type":"application/json"
       }
     }).then(response => response.json())
-    .then(responseJSON => {dispatch({type: 'COMMENT_SENT'})})
+    .then(responseJSON => {dispatch({type: 'SENT'})})
   }
 }
 
 export function getComments(id) {
   return(dispatch) => {
-    dispatch({type: 'LOAD_COMMENTS'});
+    dispatch({type: 'LOADING'});
     fetch(`http://localhost:3001/api/colivings/${id}/comments`)
     .then(response => response.json() )
     .then(comments => dispatch({type: 'GET_COMMENTS', payload: comments}))
+  }
+}
+
+export function addColiving(data) {
+  return(dispatch) => {
+    dispatch({type: 'SENDING'});
+    fetch('http://localhost:3001/api/colivings', {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        "Accept":"application/json",
+        "Content-Type":"application/json"
+      }
+    }).then(response => response.json())
+    .then(responseJSON => {dispatch({type: 'SENT'})})
   }
 }
