@@ -44,6 +44,7 @@ class AddForm extends Component {
     return (
       <div className="cospace-container">
       <h1 className='center'> Add a new cospace! </h1>
+      <h2 className='center'>{this.props.message}</h2>
 
           <Form horizontal onSubmit={this.handleSubmit}>
       <FormGroup controlId="formHorizontalName">
@@ -94,4 +95,8 @@ class AddForm extends Component {
   }
 }
 
-export default connect(null, { addCospace })(AddForm)
+function mapStateToProps(state) {
+  return {message: state.cospaces.message}
+}
+
+export default connect(mapStateToProps, { addCospace })(AddForm)
