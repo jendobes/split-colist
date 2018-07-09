@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { ListGroup, ListGroupItem } from 'react-bootstrap'
+import "../css/App.css"
 
 
 class Comments extends Component {
@@ -11,7 +13,7 @@ class Comments extends Component {
     const { comments } = this.props
     if(comments){
     return comments.map(comment =>
-      <li key={comment.id}>{comment.body}</li>
+      <ListGroupItem key={comment.id}>{comment.body}</ListGroupItem>
       )
     }
   }
@@ -19,19 +21,19 @@ class Comments extends Component {
   renderNewComment() {
     const { id, body } = this.props.newComment
     if(body){
-      return <li key={id}>{body}</li>
+      return <ListGroupItem key={id}>{body}</ListGroupItem>
     }
   }
 
 
 render() {
     return (
-
-      <ul>
+      <div className="comments-wrapper">
+      <ListGroup>
       {this.renderComments()}
       {this.renderNewComment()}
-      </ul>
-
+      </ListGroup>
+      </div>
     )
   }
 }

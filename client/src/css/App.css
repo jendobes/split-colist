@@ -54,6 +54,11 @@
   margin-top: 50px;
 }
 
+.comments-wrapper {
+  width: 80%;
+  margin: auto;
+}
+
 .Coworking-container {
   background-color: #222;
   background-image: url("../images/coworking.jpg");
