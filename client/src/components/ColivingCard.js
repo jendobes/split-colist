@@ -16,7 +16,7 @@ const ColivingCard = (props) => {
         <p>About: {about}</p>
         <p>Webiste: {website}</p>
         <p>Rating: {rating}</p>
-        <Link to={`/coliving/${id}`}>View Page</Link>
+        <Link to={`/colivings/${id}`}>View Page</Link>
       </div>
     </div>
   )

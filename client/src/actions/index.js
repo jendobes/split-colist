@@ -28,7 +28,7 @@ export function addComment(data, id) {
         "Content-Type":"application/json"
       }
     }).then(response => response.json())
-    .then(responseJSON => {dispatch({type: 'SENT'})})
+    .then(comment => dispatch({type: 'SENT_COMMENT', payload: comment}))
   }
 }
 

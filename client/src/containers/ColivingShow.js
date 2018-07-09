@@ -6,17 +6,25 @@ import Comments from '../components/Comments.js'
 import '../css/App.css';
 
 class ColivingShow extends Component {
-constructor() {
-  super()
+constructor(props) {
+  super(props)
 
   this.handleChange = this.handleChange.bind(this);
   this.handleSubmit = this.handleSubmit.bind(this);
   this.loadComments = this.loadComments.bind(this);
+  // this.loadComments()
 
     this.state = {
       value: '',
+      comments: []
     };
   }
+
+  componentWillReceiveProps(nextProps) {
+       if(nextProps.comments){
+         console.log("nextProps")
+       }
+   }
 
 
   getValidationState() {
@@ -35,16 +43,17 @@ constructor() {
    e.preventDefault()
    this.props.addComment(this.state, this.props.coliving.id)
    this.setState({ value: ''})
-   this.forceUpdate()
  }
 
  loadComments() {
-   let id = this.props.coliving.id
-   let comments = this.props.getComments(id)
+   if(this.props.coliving.comments){
+     return <Comments comments={this.props.coliving.comments} newComment={this.props.comments} />
+   }
  }
 
 
   render() {
+
     return(
       <div>
 
@@ -57,10 +66,8 @@ constructor() {
             <p>Rating: {this.props.coliving.rating}</p>
             <a href={this.props.coliving.website}>Website</a>
             <br/>
-            <h3 onClick={this.loadComments}>Community Comments</h3>
-          
-
-
+            <h3>Community Comments</h3>
+            <div>{this.loadComments()}</div>
           </div>
 
         </div>
@@ -94,6 +101,7 @@ constructor() {
 }
 
 const mapStateToProps = (state, ownProps) => {
+
   const comments = state.cospaces.comments
   const coliving = state.cospaces.colivings.find(coliving => coliving.id == ownProps.match.params.colivingId)
 

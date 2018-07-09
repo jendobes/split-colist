@@ -1,16 +1,38 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const Comments = (props) => {
 
-  const renderComments = props.coliving.comments.map(comment =>
-    <li key={comment.id}>{comment.body}</li>
-  )
+class Comments extends Component {
 
-  return (
-    <ul>
-    {renderComments}
-    </ul>
-  )
+  constructor(props) {
+    super(props)
+  }
+
+  renderComments() {
+    if(this.props.comments.length){
+    return this.props.comments.map(comment =>
+      <li key={comment.id}>{comment.body}</li>
+      )
+    }
+  }
+
+  renderNewComment() {
+    if(this.props.newComment){
+      debugger
+    }
+  }
+
+
+render() {
+    return (
+
+      <ul>
+      {this.renderComments()}
+      {this.renderNewComment()}
+      </ul>
+
+    )
+  }
 }
+
 
 export default Comments

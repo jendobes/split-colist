@@ -14,7 +14,7 @@ const CoworkingCard = (props) => {
         <p>About: {about}</p>
         <p>Webiste: {website}</p>
         <p>Rating: {rating}</p>
-        <Link to={`/coworking/${id}`}>View Page</Link>
+        <Link to={`/coworkings/${id}`}>View Page</Link>
       </div>
     </div>
   )
