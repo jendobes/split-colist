@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import { Form, FormGroup, Button, Col, FormControl, ControlLabel } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import { addCospace } from '../actions/index'
-import { Route } from 'react-router'
+import { Redirect } from 'react-router-dom'
 import Coliving from './Coliving'
+
 
 class AddForm extends Component {
 
@@ -30,7 +31,13 @@ class AddForm extends Component {
       about: '',
       website: ''
     });
+  }
 
+  success() {
+    if(this.props.newCospace.id){
+      let url = `${this.props.type}/${this.props.newCospace.id}`
+      return <Redirect to={url} />
+    }
   }
 
   handleChange(e) {
@@ -44,7 +51,7 @@ class AddForm extends Component {
     return (
       <div className="cospace-container">
       <h1 className='center'> Add a new cospace! </h1>
-      <h2 className='center'>{this.props.message}</h2>
+      <h2 className='center'>{this.success()}</h2>
 
           <Form horizontal onSubmit={this.handleSubmit}>
       <FormGroup controlId="formHorizontalName">
@@ -96,7 +103,7 @@ class AddForm extends Component {
 }
 
 function mapStateToProps(state) {
-  return {message: state.cospaces.message}
+  return {newCospace: state.cospaces.newCospace}
 }
 
 export default connect(mapStateToProps, { addCospace })(AddForm)
