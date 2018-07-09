@@ -11,8 +11,6 @@ constructor(props) {
 
   this.handleChange = this.handleChange.bind(this);
   this.handleSubmit = this.handleSubmit.bind(this);
-  this.loadComments = this.loadComments.bind(this);
-
 
     this.state = {
       value: '',
@@ -38,13 +36,6 @@ constructor(props) {
    this.setState({ value: ''})
  }
 
- loadComments() {
-   if(this.props.coliving.comments){
-     return <Comments comments={this.props.coliving.comments} newComment={this.props.comments} />
-   }
- }
-
-
   render() {
 
     return(
@@ -60,7 +51,7 @@ constructor(props) {
             <a href={this.props.coliving.website}>Website</a>
             <br/>
             <h3>Community Comments</h3>
-            <div>{this.loadComments()}</div>
+          <Comments comments={this.props.coliving.comments} newComment={this.props.comments} />
           </div>
 
         </div>

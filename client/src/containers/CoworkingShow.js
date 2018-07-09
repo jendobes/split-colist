@@ -10,7 +10,6 @@ class CoworkingShow extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.loadComments = this.loadComments.bind(this);
 
       this.state = {
         value: '',
@@ -35,11 +34,6 @@ class CoworkingShow extends Component {
      this.setState({ value: ''})
    }
 
-   loadComments() {
-     debugger
-     return <Comments comments={this.props.coworking.comments} newComment={this.props.comments} />
-   }
-
   render() {
     return(
       <div>
@@ -54,7 +48,7 @@ class CoworkingShow extends Component {
             <a href={this.props.coworking.website}>Website</a>
             <br/>
             <h3>Community Comments</h3>
-            <div>{this.loadComments()}</div>
+            <Comments comments={this.props.coworking.comments} newComment={this.props.comments} />
 
           </div>
 
