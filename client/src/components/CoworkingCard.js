@@ -12,8 +12,6 @@ const CoworkingCard = (props) => {
         <p>Name: {name}</p>
         <p>Location: {location}</p>
         <p>About: {about}</p>
-        <p>Webiste: {website}</p>
-        <p>Rating: {rating}</p>
         <Link to={`/coworkings/${id}`}>View Page</Link>
       </div>
     </div>

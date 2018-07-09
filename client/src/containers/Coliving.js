@@ -31,7 +31,7 @@ class Coliving extends Component {
         <Route path={`${this.props.match.url}/:colivingId`} component={ColivingShow}/>
         <Route exact path={this.props.match.url} render={() => (
           <div>
-          <h2 className="center"><Link to={'/colivings/new'}>Add a new coliving space</Link></h2>
+          <h2 className="top-link"><Link to={'/colivings/new'}>Add a new coliving space</Link></h2>
           {this.loadProfiles()}
           </div>
         )}/>

@@ -42,21 +42,20 @@ constructor(props) {
       <div>
 
         <div className="card-container">
-
           <div className="card-text">
             <h2>{this.props.coliving.name}</h2>
             <p>Location: {this.props.coliving.location}</p>
             <p>About: {this.props.coliving.about}</p>
-            <p>Rating: {this.props.coliving.rating}</p>
             <a href={this.props.coliving.website}>Website</a>
             <br/>
-            <h3>Community Comments</h3>
-          <Comments comments={this.props.coliving.comments} newComment={this.props.comments} />
           </div>
-
         </div>
 
-        <br/>
+        <div className="card-container">
+            <h2>Community Comments</h2>
+          <Comments comments={this.props.coliving.comments} newComment={this.props.comments} />
+        </div>
+
 
         <div className="card-container">
           <h2>Have you stayed at {this.props.coliving.name}?</h2>

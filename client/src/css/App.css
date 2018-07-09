@@ -34,6 +34,7 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 1000px;
     margin: auto;
+    margin-top: 30px;
     text-align: center;
 }
 
@@ -75,6 +76,17 @@
   border-style: solid;
   width: 400px;
   background: rgb(230, 228, 228, 0.4);
+}
+
+.top-link {
+  margin: auto;
+  width: 30%;
+  padding: 30px;
+}
+
+.wrapper {
+  margin: auto;
+  width: 1700px;
 }
 
 @keyframes App-logo-spin {

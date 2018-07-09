@@ -7,7 +7,7 @@ import '../css/App.css';
 class Home extends React.Component {
   render() {
     return(
-      <div>
+      <div className="wrapper">
         <div className="Coliving-container">
           <p className="text-box"><Link to='/colivings' style={{ textDecoration: 'none', color: 'white'}}>live</Link></p>
         </div>

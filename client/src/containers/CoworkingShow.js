@@ -44,20 +44,19 @@ class CoworkingShow extends Component {
             <h2>{this.props.coworking.name}</h2>
             <p>Location: {this.props.coworking.location}</p>
             <p>About: {this.props.coworking.about}</p>
-            <p>Rating: {this.props.coworking.rating}</p>
             <a href={this.props.coworking.website}>Website</a>
             <br/>
-            <h3>Community Comments</h3>
-            <Comments comments={this.props.coworking.comments} newComment={this.props.comments} />
-
           </div>
 
-        </div>
+      </div>
 
-        <br/>
+      <div className="card-container">
+        <h3>Community Comments</h3>
+        <Comments comments={this.props.coworking.comments} newComment={this.props.comments} />
+      </div>
 
         <div className="card-container">
-          <h2>Have you stayed at {this.props.coworking.name}?</h2>
+          <h2>Have you worked at {this.props.coworking.name}?</h2>
 
           <form onSubmit={this.handleSubmit}>
             <FormGroup

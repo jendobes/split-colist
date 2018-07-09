@@ -9,6 +9,7 @@ const ColivingCard = (props) => {
   const {name, location, rating, about, website, id} = props.cospace
 
   return (
+
     <div className="container">
       <div className="text-container">
         <p>Name: {name}</p>
@@ -17,6 +18,7 @@ const ColivingCard = (props) => {
         <Link to={`/colivings/${id}`}>View Page</Link>
       </div>
     </div>
+
   )
 
 }
