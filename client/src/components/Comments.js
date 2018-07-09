@@ -16,8 +16,9 @@ class Comments extends Component {
   }
 
   renderNewComment() {
-    if(this.props.newComment){
-      debugger
+    const { id, body } = this.props.newComment
+    if(body){
+      return <li key={id}>{body}</li>
     }
   }
 
