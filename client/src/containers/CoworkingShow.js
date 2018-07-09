@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { addComment, getComments } from '../actions/index.js'
 import {FormGroup, ControlLabel, FormControl, HelpBlock} from 'react-bootstrap'
 import Comments from '../components/Comments.js'
 
@@ -36,8 +37,9 @@ class CoworkingShow extends Component {
    }
 
    loadComments() {
-     let id = this.props.coworking.id
-     let comments = this.props.getComments(id)
+     if(this.props.coworking.comments){
+       return <Comments comments={this.props.coworking.comments} newComment={this.props.comments} />
+     }
    }
 
   render() {
@@ -54,7 +56,7 @@ class CoworkingShow extends Component {
             <a href={this.props.coworking.website}>Website</a>
             <br/>
             <h3 onClick={this.loadComments}>Community Comments</h3>
-        
+
           </div>
 
         </div>
@@ -88,13 +90,15 @@ class CoworkingShow extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
+
+  const comments = state.cospaces.comments
   const coworking = state.cospaces.coworkings.find(coworking => coworking.id == ownProps.match.params.coworkingId)
 
   if (coworking) {
-    return { coworking }
+    return { coworking, comments }
   } else {
-    return { coworking: {} }
+    return { coworking: {}, comments: {} }
   }
 }
 
-export default connect(mapStateToProps)(CoworkingShow)
+export default connect(mapStateToProps, { addComment })(CoworkingShow)

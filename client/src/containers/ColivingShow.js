@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {FormGroup, ControlLabel, FormControl, HelpBlock} from 'react-bootstrap'
-import { addComment, getComments } from '../actions/index.js'
+import { addComment } from '../actions/index.js'
 import Comments from '../components/Comments.js'
 import '../css/App.css';
 
@@ -12,20 +12,13 @@ constructor(props) {
   this.handleChange = this.handleChange.bind(this);
   this.handleSubmit = this.handleSubmit.bind(this);
   this.loadComments = this.loadComments.bind(this);
-  // this.loadComments()
+
 
     this.state = {
       value: '',
       comments: []
     };
   }
-
-  componentWillReceiveProps(nextProps) {
-       if(nextProps.comments){
-         console.log("nextProps")
-       }
-   }
-
 
   getValidationState() {
    const length = this.state.value.length;
@@ -112,4 +105,4 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-export default connect(mapStateToProps, { addComment, getComments })(ColivingShow)
+export default connect(mapStateToProps, { addComment })(ColivingShow)
