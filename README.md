@@ -1,24 +1,12 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+co-list connects digital nomads with coliving and coworking spaces around the world. Users can submit new cospaces and comment on their experience at each.
 
-Things you may want to cover:
+INSTALLATION:
 
-* Ruby version
+fork and clone repo
+run 'bundle install' && 'npm install'
+run 'rake db:migrate' and 'rake db:seed'
+run 'rake start' to launch browser and backend API
+CONTRIBUTORS GUIDE If you see a bug please file an issue with a pull request.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This project has been licensed under the MIT open source license.
