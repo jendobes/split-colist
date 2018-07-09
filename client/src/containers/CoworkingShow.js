@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addComment, getComments } from '../actions/index.js'
+import { addComment } from '../actions/index.js'
 import {FormGroup, ControlLabel, FormControl, HelpBlock} from 'react-bootstrap'
 import Comments from '../components/Comments.js'
 

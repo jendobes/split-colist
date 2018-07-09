@@ -4,7 +4,7 @@ import '../css/profile.css'
 
 const CoworkingCard = (props) => {
 
-  const {name, location, rating, about, website, id} = props.cospace
+  const {name, location, about, id} = props.cospace
 
   return (
     <div className="container">

@@ -3,8 +3,6 @@ import { Form, FormGroup, Button, Col, FormControl, ControlLabel } from 'react-b
 import { connect } from 'react-redux'
 import { addCospace } from '../actions/index'
 import { Redirect } from 'react-router-dom'
-import Coliving from './Coliving'
-
 
 class AddForm extends Component {
 

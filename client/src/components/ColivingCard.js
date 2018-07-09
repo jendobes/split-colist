@@ -6,7 +6,7 @@ import '../css/profile.css'
 
 const ColivingCard = (props) => {
 
-  const {name, location, rating, about, website, id} = props.cospace
+  const {name, location, about, id} = props.cospace
 
   return (
 
