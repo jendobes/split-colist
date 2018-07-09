@@ -4,6 +4,7 @@ export function getCoworkings() {
     fetch('http://localhost:3001/api/coworkings')
     .then(response => response.json())
     .then(responseJSON => { dispatch({type: 'GET_COWORKINGS', payload: responseJSON}) })
+    .catch(err => console.log(err))
   }
 }
 
@@ -13,6 +14,7 @@ export function getColivings() {
     fetch('http://localhost:3001/api/colivings')
     .then(response => response.json() )
     .then(colivings => dispatch({type: 'GET_COLIVINGS', payload: colivings}))
+    .catch(err => console.log(err))
   }
 }
 
@@ -29,6 +31,7 @@ export function addComment(data, id) {
       }
     }).then(response => response.json())
     .then(comment => dispatch({type: 'SENT_COMMENT', payload: comment}))
+    .catch(err => console.log(err))
   }
 }
 
@@ -38,6 +41,7 @@ export function getComments(id) {
     fetch(`http://localhost:3001/api/colivings/${id}/comments`)
     .then(response => response.json() )
     .then(comments => dispatch({type: 'GET_COMMENTS', payload: comments}))
+    .catch(err => console.log(err))
   }
 }
 
@@ -54,5 +58,6 @@ export function addCospace(data, type) {
       }
     }).then(response => response.json())
     .then(responseJSON => {dispatch({type: 'SENT'})})
+    .catch(err => console.log(err))
   }
 }
