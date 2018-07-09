@@ -31,15 +31,13 @@ class CoworkingShow extends Component {
 
    handleSubmit(e) {
      e.preventDefault()
-     this.props.addComment(this.state, this.props.coworking.id)
+     this.props.addComment(this.state, this.props.match.url)
      this.setState({ value: ''})
-     this.forceUpdate()
    }
 
    loadComments() {
-     if(this.props.coworking.comments){
-       return <Comments comments={this.props.coworking.comments} newComment={this.props.comments} />
-     }
+     debugger
+     return <Comments comments={this.props.coworking.comments} newComment={this.props.comments} />
    }
 
   render() {
@@ -55,7 +53,8 @@ class CoworkingShow extends Component {
             <p>Rating: {this.props.coworking.rating}</p>
             <a href={this.props.coworking.website}>Website</a>
             <br/>
-            <h3 onClick={this.loadComments}>Community Comments</h3>
+            <h3>Community Comments</h3>
+            <div>{this.loadComments()}</div>
 
           </div>
 

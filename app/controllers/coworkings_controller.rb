@@ -2,7 +2,7 @@ class CoworkingsController < ApplicationController
 
   def index
     @coworkings = Coworking.all
-    render json: @coworkings
+    render json: @coworkings.to_json(include: :comments)
   end
 
   def show

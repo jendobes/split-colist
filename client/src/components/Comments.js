@@ -9,7 +9,7 @@ class Comments extends Component {
 
   renderComments() {
     const { comments } = this.props
-    if(comments.length){
+    if(comments){
     return comments.map(comment =>
       <li key={comment.id}>{comment.body}</li>
       )

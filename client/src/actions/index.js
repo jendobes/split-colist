@@ -17,7 +17,7 @@ export function getColivings() {
 }
 
 export function addComment(data, id) {
-  let url = `http://localhost:3001/api/colivings/${id}/comments`
+  let url = `http://localhost:3001/api${id}/comments`
   return(dispatch) => {
     dispatch({type: 'SENDING'})
     return fetch(url, {

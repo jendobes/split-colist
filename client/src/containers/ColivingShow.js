@@ -34,7 +34,7 @@ constructor(props) {
 
  handleSubmit(e) {
    e.preventDefault()
-   this.props.addComment(this.state, this.props.coliving.id)
+   this.props.addComment(this.state, this.props.match.url)
    this.setState({ value: ''})
  }
 
