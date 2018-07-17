@@ -1,1 +1,5 @@
 bundle exec rails s -p 3001
+
+//in development procfile
+web: sh -c 'cd client && npm start'
+api: bundle exec rails s -p 3001
