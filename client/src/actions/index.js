@@ -57,7 +57,7 @@ export function addCospace(data, type) {
         "Content-Type":"application/json"
       }
     }).then(response => response.json())
-    .then(cospace => {dispatch({type: 'SENT', payload: cospace})})
+    .then(cospace => dispatch({type: 'SENT', payload: cospace}))
     .catch(err => console.log(err))
   }
 }

@@ -10,14 +10,14 @@ import AddForm from './AddForm'
 
 class Coliving extends Component {
 
-
   componentDidMount() {
     this.props.getColivings()
   }
 
+
   loadProfiles() {
     return this.props.colivings.map((coliving) => {
-      return < ColivingCard key={coliving.id} cospace={coliving} />
+      return < ColivingCard key={coliving.id} cospace={coliving}/>
     })
   }
 

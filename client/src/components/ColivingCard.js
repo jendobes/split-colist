@@ -1,25 +1,27 @@
-import React from 'react';
+import React, { Component} from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap'
 
 
 import '../css/profile.css'
 
-const ColivingCard = (props) => {
+class ColivingCard extends Component {
 
-  const {name, location, about, id} = props.cospace
 
+  render() {
   return (
 
     <div className="container">
       <div className="text-container">
-        <p>Name: {name}</p>
-        <p>Location: {location}</p>
-        <p>About: {about}</p>
-        <Link to={`/colivings/${id}`}>View Page</Link>
+        <p>Name: {this.props.cospace.name}</p>
+        <p>Location: {this.props.cospace.location}</p>
+        <p>About: {this.props.cospace.about}</p>        
+        <Link to={`/colivings/${this.props.cospace.id}`}>View Page</Link>
       </div>
     </div>
 
   )
+}
 
 }
 
