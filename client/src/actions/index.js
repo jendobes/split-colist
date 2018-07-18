@@ -1,7 +1,7 @@
 export function getCoworkings() {
   return(dispatch) => {
     dispatch({type: 'LOADING'});
-    fetch('http://localhost:3001/api/coworkings')
+    window.fetch('api/coworkings')
     .then(response => response.json())
     .then(responseJSON => { dispatch({type: 'GET_COWORKINGS', payload: responseJSON}) })
     .catch(err => console.log(err))
@@ -11,7 +11,7 @@ export function getCoworkings() {
 export function getColivings() {
   return(dispatch) => {
     dispatch({type: 'LOADING'});
-    fetch('http://localhost:3001/api/colivings')
+    window.fetch('api/colivings')
     .then(response => response.json() )
     .then(colivings => dispatch({type: 'GET_COLIVINGS', payload: colivings}))
     .catch(err => console.log(err))
@@ -19,10 +19,10 @@ export function getColivings() {
 }
 
 export function addComment(data, id) {
-  let url = `http://localhost:3001/api${id}/comments`
+  let url = `${id}/comments`
   return(dispatch) => {
     dispatch({type: 'SENDING'})
-    return fetch(url, {
+    return window.fetch(url, {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
@@ -38,7 +38,7 @@ export function addComment(data, id) {
 export function getComments(id) {
   return(dispatch) => {
     dispatch({type: 'LOADING'});
-    fetch(`http://localhost:3001/api/colivings/${id}/comments`)
+    window.fetch(`api/colivings/${id}/comments`)
     .then(response => response.json() )
     .then(comments => dispatch({type: 'GET_COMMENTS', payload: comments}))
     .catch(err => console.log(err))
@@ -46,10 +46,10 @@ export function getComments(id) {
 }
 
 export function addCospace(data, type) {
-  const url = `http://localhost:3001/api${type}`
+  const url = `api${type}`
   return(dispatch) => {
     dispatch({type: 'SENDING'});
-    fetch(url, {
+    window.fetch(url, {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
