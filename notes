@@ -3,3 +3,6 @@ bundle exec rails s -p 3001
 //in development procfile
 web: sh -c 'cd client && npm start'
 api: bundle exec rails s -p 3001
+
+
+Check out the new logo that I created on <a href="http://logomakr.com" title="Logo Makr">LogoMakr.com</a> https://logomakr.com/7vRmVN
